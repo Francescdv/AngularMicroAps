@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+ 
+
+    <h2>Angular QR Code Customization Example</h2>
+
+    <div>
+      <qr-code [value]="values" [size]="width" [level]="level"></qr-code>
+    </div>
+    
+    <label>
+      Change name: <input [(ngModel)]="values" placeholder="name" />
+    </label>
+    
+    <br />
+    <br />
+    <br />
+    
+    <strong>Change to</strong>:
+    <button class="btn btn-info" (click)="qrData('Monica Rambeau')">Monica Rambeau</button>
+    <button class="btn btn-info" (click)="qrData('Nosy Neighbor')">Nosy Neighbor</button>
+    <button class="btn btn-info" (click)="qrData('Mephisto')"> Mephisto</button>
+    
+    <br />
+    <br />
+    <br />
+    
+    <strong>Change Width</strong>:
+    <button class="btn btn-info" (click)="qrWidth(550)">550</button>
+    <button class="btn btn-info" (click)="qrWidth(450)">450</button>
+    <button class="btn btn-info" (click)="qrWidth(350)">350</button>
+    <button class="btn btn-info" (click)="qrWidth(250)">250</button>
+    
+    <br />
+    <br />
+    <br />
+    
+    <strong>Update Level</strong>:
+    <button class="btn btn-info" (click)="qrLevel('L')">L</button>
+    <button class="btn btn-info" (click)="qrLevel('M')">M</button>
+    <button class="btn btn-info" (click)="qrLevel('Q')">Q</button>
+    <button class="btn btn-info" (click)="qrLevel('H')">H</button>
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
