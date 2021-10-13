@@ -9,10 +9,15 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
+import timeGridWeek from '@fullcalendar/timegrid'
+
+
 
 FullCalendarModule.registerPlugins([
   interactionPlugin,
-  dayGridPlugin
+  dayGridPlugin,
+  timeGridWeek
+
 ]);
 
 @NgModule({

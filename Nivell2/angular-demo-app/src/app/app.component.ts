@@ -11,6 +11,13 @@ export class AppComponent {
   public values: string = '';
   public level: "L" | "M" | "Q" | "H";
   public width: number;
+  public containerQr:string = "";
+  public background: string = "white";
+  public backgroundAlpha:number = 1;
+  public foreground: string= "black";
+  public foregroundAlpha:number = 1;
+
+
 
   constructor() {
     this.level = "L";
@@ -29,4 +36,30 @@ export class AppComponent {
   qrWidth(val: number) {
     this.width = val;
   }
+
+  qrBackground(val: string) {
+    this.background = val;
+  }
+
+  qrBackgroundAlpha(val: number) {
+    this.backgroundAlpha = val;
+  }
+
+  qrForeground(val: string) {
+    this.background = val;
+  }
+
+  qrForegroundAlpha(val: number) {
+    this.foregroundAlpha = val;
+  }
+
+
+  hide(){
+    this.containerQr="d-none";
+  }
+  show(){
+    this.containerQr="";
+  }
+
+
 }

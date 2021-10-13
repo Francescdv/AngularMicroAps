@@ -1,6 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CalendarOptions } from '@fullcalendar/angular';
+import { UpperCasePipe } from '@angular/common';
+
+
+
+
+
 
 
 @Component({
@@ -9,7 +15,9 @@ import { CalendarOptions } from '@fullcalendar/angular';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  public options: any;
 
     Events: any = [
       {
@@ -20,20 +28,30 @@ export class AppComponent {
     ];
 
     calendarOptions: CalendarOptions = {
-        initialView: 'dayGridMonth'
+        initialView: 'dayGridMonth',
+        headerToolbar: { center: 'dayGridMonth,timeGridWeek,timeGridDay',
+       }
+
+
     };
+
+
+
+
+
+
 
     constructor(
         private httpClient: HttpClient
     ) { }
 
     onDateSelect(arg: any) {
-      alert('Date clicked: ' + arg.dateStr);
+      alert('Date clicked: ' + arg.dateStr)
     }
 
     ngOnInit(){
         setTimeout(() => {
-            return this.httpClient.get('http://localhost/calendar/dynamic-events.php')
+            return this.httpClient.get('http://localhost:8888/dynamic-events.php')
             .subscribe((res: any) => {
                 this.Events.push(res);
                 console.log(this.Events);
@@ -42,11 +60,19 @@ export class AppComponent {
 
         setTimeout(() => {
             this.calendarOptions = {
-            initialView: 'dayGridMonth',
             dateClick: this.onDateSelect.bind(this),
             events: this.Events
             };
         }, 2500);
+
+
+
+
     }
+
+
+
+
+
 
 }

@@ -11,47 +11,110 @@
     <title>Hello, world!</title>
   </head>
   <body>
- 
+
 
     <h2>Angular QR Code Customization Example</h2>
 
-    <div>
-      <qr-code [value]="values" [size]="width" [level]="level"></qr-code>
+    <br />
+    <div class="container">
+    <div [class]=containerQr id=qr>
+      <qr-code [value]="values" [size]="width" [level]="level" [background]="background" [backgroundAlpha]="backgroundAlpha" [foreground]="foreground"  [backgroundAlpha]="foregroundAlpha"></qr-code>
     </div>
-    
+    <br />
     <label>
       Change name: <input [(ngModel)]="values" placeholder="name" />
     </label>
-    
+
     <br />
     <br />
     <br />
-    
+
     <strong>Change to</strong>:
     <button class="btn btn-info" (click)="qrData('Monica Rambeau')">Monica Rambeau</button>
     <button class="btn btn-info" (click)="qrData('Nosy Neighbor')">Nosy Neighbor</button>
     <button class="btn btn-info" (click)="qrData('Mephisto')"> Mephisto</button>
-    
+
     <br />
     <br />
     <br />
-    
+
     <strong>Change Width</strong>:
     <button class="btn btn-info" (click)="qrWidth(550)">550</button>
     <button class="btn btn-info" (click)="qrWidth(450)">450</button>
     <button class="btn btn-info" (click)="qrWidth(350)">350</button>
     <button class="btn btn-info" (click)="qrWidth(250)">250</button>
-    
+
     <br />
     <br />
     <br />
-    
+
     <strong>Update Level</strong>:
     <button class="btn btn-info" (click)="qrLevel('L')">L</button>
     <button class="btn btn-info" (click)="qrLevel('M')">M</button>
     <button class="btn btn-info" (click)="qrLevel('Q')">Q</button>
     <button class="btn btn-info" (click)="qrLevel('H')">H</button>
 
+    <br />
+    <br />
+    <br />
+
+
+
+    <strong>background</strong>:
+    <button class="btn btn-info" (click)="qrBackground('blue')">Blue</button>
+    <button class="btn btn-info" (click)="qrBackground('red')">Red</button>
+    <button class="btn btn-info" (click)="qrBackground('green')">Green</button>
+    <button class="btn btn-info" (click)="qrBackground('yellow')">Yellow</button>
+    <button class="btn btn-info" (click)="qrBackground('white')">White</button>
+
+    <br />
+    <br />
+    <br />
+
+
+    <strong> Opacity of the background</strong>:
+    <button class="btn btn-info" (click)="qrBackgroundAlpha(1)">1</button>
+    <button class="btn btn-info" (click)="qrBackgroundAlpha(0.8)">0.8</button>
+    <button class="btn btn-info" (click)="qrBackgroundAlpha(0.6)">0.6</button>
+    <button class="btn btn-info" (click)="qrBackgroundAlpha(0.4)">0.4</button>
+    <button class="btn btn-info" (click)="qrBackgroundAlpha(0.2)">0.2</button>
+    <button class="btn btn-info" (click)="qrBackgroundAlpha(0)">0.0</button>
+
+    <br />
+    <br />
+    <br />
+
+    <strong>Foreground</strong>:
+    <button class="btn btn-info" (click)="qrForeground('blue')">Blue</button>
+    <button class="btn btn-info" (click)="qrForeground('red')">Red</button>
+    <button class="btn btn-info" (click)="qrForeground('green')">Green</button>
+    <button class="btn btn-info" (click)="qrForeground('yellow')">Yellow</button>
+    <button class="btn btn-info" (click)="qrForeground('white')">White</button>
+
+    <br />
+    <br />
+    <br />
+
+    <strong> Opacity of the foreground</strong>:
+    <button class="btn btn-info" (click)="qrForegroundAlpha(1)">1</button>
+    <button class="btn btn-info" (click)="qrForegroundAlpha(0.8)">0.8</button>
+    <button class="btn btn-info" (click)="qrForegroundAlpha(0.6)">0.6</button>
+    <button class="btn btn-info" (click)="qrForegroundAlpha(0.4)">0.4</button>
+    <button class="btn btn-info" (click)="qrForegroundAlpha(0.2)">0.2</button>
+    <button class="btn btn-info" (click)="qrForegroundAlpha(0)">0.0</button>
+
+    <br />
+    <br />
+    <br />
+
+    <div id="hide">
+    <button class="btn btn-danger" (click)="hide()">Hide</button>
+    <button class="btn btn-danger" (click)="show()">Show</button>
+  </div>
+
+
+
+  </div>
 
 
 
